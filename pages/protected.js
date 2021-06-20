@@ -12,7 +12,6 @@ export default function Page() {
     const fetchData = async () => {
       const res = await fetch('/api/examples/protected')
       const json = await res.json()
-
       if (json.data) {
         setContent(json.data.email)
       }

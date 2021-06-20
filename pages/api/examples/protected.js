@@ -12,15 +12,14 @@ export default async (req, res) => {
   const { email } = session.user
 
   if (session) {
-    const users = await User.findOne({
+    const user = await User.findOne({
       email
     }) /* find all the data in our database */
-    console.log('USER', users)
-    res.status(200).json({ success: true, data: users })
+
+    res.status(200).json({ success: true, data: user })
   } else {
     res.send({
       error: 'You must be sign in to view the protected content on this page.'
     })
   }
-  ;``
 }
