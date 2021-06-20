@@ -22,4 +22,4 @@ const ContactSchema = new mongoose.Schema({
 })
 
 export default mongoose.models.Contact ||
-  mongoose.model('Contact', ContactSchema)
+  mongoose.model('Contacts', ContactSchema)
