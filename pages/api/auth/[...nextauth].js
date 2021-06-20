@@ -6,10 +6,10 @@ import Providers from 'next-auth/providers'
 export default NextAuth({
   // https://next-auth.js.org/configuration/providers
   providers: [
-    Providers.Email({
-      server: process.env.EMAIL_SERVER,
-      from: process.env.EMAIL_FROM
-    }),
+    // Providers.Email({
+    //   server: process.env.EMAIL_SERVER,
+    //   from: process.env.EMAIL_FROM
+    // }),
     Providers.GitHub({
       clientId: process.env.GITHUB_ID,
       clientSecret: process.env.GITHUB_SECRET
@@ -17,23 +17,21 @@ export default NextAuth({
     Providers.Google({
       clientId: process.env.GOOGLE_ID,
       clientSecret: process.env.GOOGLE_SECRET
+    }),
+    Providers.Twitter({
+      clientId: process.env.TWITTER_ID,
+      clientSecret: process.env.TWITTER_SECRET
     })
   ],
-
   database: process.env.MONGODB_URI,
-
   secret: process.env.SECRET,
-
   session: {
     jwt: true
   },
-
   jwt: {},
-
   pages: {},
   callbacks: {},
   events: {},
-  theme: 'dark',
-
+  theme: 'light',
   debug: false
 })
