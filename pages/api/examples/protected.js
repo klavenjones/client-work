@@ -4,14 +4,19 @@ import User from '../../../models/Users'
 import dbConnect from '../../../util/dbConnection'
 
 export default async (req, res) => {
-  const session = await getSession({ req })
-
+  //Connect to Database
   await dbConnect()
+  //Retrieve Current Session
+  const session = await getSession({ req })
+  //Retrieve Session Email
+  const { email } = session.user
 
   if (session) {
-    const users = await User.find({}) /* find all the data in our database */
+    const users = await User.findOne({
+      email
+    }) /* find all the data in our database */
+    console.log('USER', users)
     res.status(200).json({ success: true, data: users })
-    // res.send({ content: 'Hello' })
   } else {
     res.send({
       error: 'You must be sign in to view the protected content on this page.'
