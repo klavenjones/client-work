@@ -1,5 +1,5 @@
 // This is an example of to protect an API route
-import { getSession } from 'next-auth/client'
+import { getSession } from 'next-auth/react'
 import User from '../../../models/Users'
 import dbConnect from '../../../util/dbConnection'
 
