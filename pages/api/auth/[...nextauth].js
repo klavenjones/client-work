@@ -36,7 +36,6 @@ export default NextAuth({
   },
   jwt: {},
   pages: {},
-  callbacks: {},
   events: {},
   theme: "light",
   debug: false

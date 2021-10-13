@@ -1,5 +1,5 @@
-import mongoose from 'mongoose'
-const Schema = mongoose.Schema
+import mongoose from "mongoose";
+const Schema = mongoose.Schema;
 //This Schema will correspond with the collection in our db
 const ContactSchema = new mongoose.Schema({
   name: {
@@ -35,12 +35,12 @@ const ContactSchema = new mongoose.Schema({
     type: String,
     maxlength: [300]
   },
-  user: {
+  userId: {
     type: Schema.Types.ObjectId,
-    ref: 'User',
+    ref: "User",
     required: true
   }
-})
+});
 
 export default mongoose.models.Contact ||
-  mongoose.model('Contacts', ContactSchema)
+  mongoose.model("Contact", ContactSchema);

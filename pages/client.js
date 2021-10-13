@@ -1,6 +1,6 @@
 import Layout from '../components/layout'
 
-export default function Page () {
+export default function ClientSide () {
   return (
     <Layout>
       <h1>Client Side Rendering</h1>

@@ -1,7 +1,7 @@
 import { useSession, getSession } from "next-auth/react";
 import Layout from "../components/layout";
 
-export default function Page() {
+export default function ServerSide() {
   const { data: session, status } = useSession();
 
   return (
